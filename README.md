@@ -6,9 +6,9 @@ $ keytool -importcert -file <path-of-file-cer> -keystore keystore.jks -alias "<a
 $ Enter keystore password: <password>
 $ Re-enter new password: <password>
 ```
-* <path-of-file-cer> : server.cer
-* <alias-of-cer>: server
-* <password>: changeit
+* path-of-file-cer : server.cer
+* alias-of-cer: server
+* password: changeit
 
 ## Step 2: checking keystore.jks
 ```
@@ -36,10 +36,10 @@ import org.apache.http.util.EntityUtils;
 
 public class HttpClientSample {
 	public static void main(String[] args) throws ClientProtocolException, IOException  {  
-	  //Set key into trustStore
-	  System.setProperty("javax.net.ssl.trustStore", "keystore.jks");
-    System.setProperty("javax.net.ssl.trustStorePassword", "changeit");
-    System.setProperty("javax.net.ssl.trustStoreType", "JKS");
+	  	//Set key into trustStore
+	  	System.setProperty("javax.net.ssl.trustStore", "keystore.jks");
+    		System.setProperty("javax.net.ssl.trustStorePassword", "changeit");
+    		System.setProperty("javax.net.ssl.trustStoreType", "JKS");
 
 		HttpClient client = new DefaultHttpClient();
 		HttpGet httpGet = new HttpGet("https://www.st.happygocard.com.tw/SamsungPay/auth/eligibility");
